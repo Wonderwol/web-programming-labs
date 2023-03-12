@@ -1,24 +1,50 @@
 body {
-    background-color: lightblue;
-    color: maroon;
+    background-color: black;
+    color: white;
     font-family: Arial;
     margin: 0px; 
 }
 
 header {
-    background: linear-gradient(to right, red, orange, yellow, green, #81d4fa, darkblue, purple);
-    color: lightgreen;
-    padding: 10px;
+    background: linear-gradient( red, orange, yellow, green, #81d4fa, darkblue, purple);
+    color: black;
+    padding: 20px;
     font-size: 16pt;
 }
 
+header:hover{
+    color: white;
+    background: linear-gradient(white, blue, red);
+    font-size: 10pt;
+}
+
+header:active{
+    color: yellow;
+    background: linear-gradient(black, red, yellow);
+    font-size: 30pt;
+}
+
 footer {
-    background: linear-gradient(to right, red, orange, yellow, green, #81d4fa, darkblue, purple);
-    color: lightgreen;
-    padding: 10px;
+    background: linear-gradient( red, orange, yellow, green, #81d4fa, darkblue, purple);
+    color: black;
+    padding: 20px;
     font-size: 16pt;
     text-align: right;
 }
+
+footer:hover{
+    color: white;
+    background: linear-gradient(white, blue, red);
+    font-size: 10pt;
+
+}
+
+footer:active{
+    color: yellow;
+    background: linear-gradient(black, red, yellow);
+    font-size: 30pt;
+}
+
 
 a {
     color: blue;
@@ -45,4 +71,3 @@ a:active {
     color: black;
     background-color: white;
 }
-
