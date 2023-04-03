@@ -16,7 +16,18 @@
         height: 120px;
         overflow-x: hidden;
         overflow-y: auto;
-
+        position: relative;
+        background: linear-gradient(red, orange, yellow, green, #81d4fa, darkblue, purple);
+        z-index: 2;
+    }
+    .second {
+        z-index: 1;
+        left: 380px;
+        top: 120px;
+        position: fixed;
+    }
+    .second:hover {
+        z-index: 3;
     }
 </style>
 
@@ -39,7 +50,7 @@
     что все дома на этой улице уже выставлены на продажу и никто не хочет их покупать ни за 180, ни за 150, ни даже за 100 тысяч.
 </div>
 
-<div>
+<div class="second">
     Конечно, тут много деталей, но для базового понимания финансовый инструмент
     удобно представлять как инженерный инструмент или объект. Это не сложнее, чем представить,
     зачем нужен циркуль, ящик или, например, железнодорожный мост.
