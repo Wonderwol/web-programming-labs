@@ -1,0 +1,88 @@
+.container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .cloud {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: 1s;
+  }
+
+  .cloud-1 {
+    top: 165px;
+    left: 855px;
+    width: 35px;
+    height: 3px;
+    box-shadow: 5px 2px 10px black;
+  }
+
+  .cloud-2 {
+    top: 150px;
+    left: 895px;
+    width: 45px;
+    height: 7px;
+    box-shadow: 5px 3px 10px black;
+  }
+
+  .cloud-3 {
+    top: 130px;
+    left: 940px;
+    width: 57px;
+    height: 15px;
+    box-shadow: 5px 4px 10px black;
+  }
+
+  .cloud-4 {
+    top: 108px;
+    left: 985px;
+    width: 90px;
+    height: 30px;
+    font-size: 13px;
+    box-shadow: 5px 5px 10px black;
+    text-align: center;
+    font-family:sans-serif;
+  }
+  .cloud-5 {
+    top: 173px;
+    left: 1330px;
+    width: 35px;
+    height: 3px;
+    box-shadow: -5px 2px 10px black;
+  }
+
+  .cloud-6 {
+    top: 157px;
+    left: 1304px;
+    width: 45px;
+    height: 7px;
+    box-shadow: -5px 3px 10px black;
+  }
+
+  .cloud-7 {
+    top: 135px;
+    left: 1280px;
+    width: 57px;
+    height: 15px;
+    box-shadow: -5px 4px 10px black;
+  }
+
+  .cloud-8 {
+    top: 102px;
+    left: 1238px;
+    width: 90px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    box-shadow: -5px 5px 10px black;
+  }
+
+  .container:hover .cloud {
+    opacity: 1;
+  }
