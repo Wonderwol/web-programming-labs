@@ -13,6 +13,10 @@
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+        function showAuthor() {
+            let author = 'Автор страницы:\nТемергалеев Никита Алексеевич\n\nЧто вершит судьбу человечества в этом мире? Некое незримое существо или закон, подобно Длани Господней парящей над миром? По крайне мере истинно то, что человек не властен даже над своей волей. ';
+            alert(author);
+        }
     </script>
     <style>
         .message {
@@ -29,16 +33,16 @@
     </style>
 </head>
 <body>
-        <header>
+        <header onclick="showAuthor()">
             НГТУ, ФБ, Лабораторная работа 5
         </header>
 
         <main>
             <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-            <div class="message">Узнать, кто автор страницы</div>
+            <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
         </main>
 
-        <footer>
+        <footer onclick="showAuthor()">
             &copy; Темергалеев Н. А., ФБИ-11, 2 курс, 2023
         </footer>
 </body>
