@@ -7,6 +7,56 @@
     <title>Темергалеев Н. А. Лабораторная 5</title>
     <link rel="stylesheet" href="main.css">
     <script>
+        function hideBlock1() {
+            let block = document.getElementById('block-1');
+            block.style.display = 'none';
+        }
+
+
+        function hideBlock2() {
+            let block = document.getElementById('block-2');
+            block.style.display = 'none';
+        }
+
+        function hideBlock3() {
+            let block = document.getElementById('block-3');
+            block.style.display = 'none';
+        }
+
+        function hideBlock4() {
+            let block = document.getElementById('block-4');
+            block.style.display = 'none';
+        }
+
+        function hideBlock5() {
+            let block = document.getElementById('block-5');
+            block.style.display = 'none';
+        }
+
+        function hideBlock6() {
+            let block = document.getElementById('block-6');
+            block.style.display = 'none';
+        }
+
+        function hideBlock7() {
+            let block = document.getElementById('block-7');
+            block.style.display = 'none';
+        }
+
+        function hideBlock8() {
+            let block = document.getElementById('block-8');
+            block.style.display = 'none';
+        }
+
+        function hideBlock9() {
+            let block = document.getElementById('block-9');
+            block.style.display = 'none';
+        }
+
+        function hideBlock10() {
+            let block = document.getElementById('block-10');
+            block.style.display = 'none';
+        }
         function showSum() {
             let inputA = document.getElementById('numberA');
             let inputB = document.getElementById('numberB');
@@ -59,6 +109,22 @@
             output.style.color = textColor;
             output.style.border = borderType;
         }
+
+        function showTotal() {
+            let apple = 100;
+            let pear = 80;
+            let orange = 150;
+            let melon = 300;
+            let valueApple = parseInt(totalA.value);
+            let valuePear = parseInt(totalB.value);
+            let valueOrange = parseInt(totalC.value);
+            let valueMelon = parseInt(totalD.value);
+            let total = apple * valueApple + pear * valuePear + orange * valueOrange + melon * valueMelon;
+            document.getElementById("Div").innerHTML = "Общая цена: " + total;
+        }
+        function wholePrice() {
+            print(total)
+        }
     </script>
     <style>
         .message {
@@ -78,6 +144,117 @@
             width: 300px;
             height: 40px;
         }
+        .trash {
+            width: 350px;
+            height: 400px;
+            background-color: white;
+            border: 5px red ridge;
+            color: black;
+            display: inline-block;
+            text-align: center;
+            margin: 20px;
+        }
+        .price {
+            width: 100px;
+            height: 20px;
+            border: 1px black ridge;
+            color: black;
+            background-color: rgb(212, 209, 209);
+            display: inline-block;
+            text-align:center;
+            cursor: pointer;
+            position:relative;
+            right: 120px;
+        }
+
+        .fruit {
+            position:relative;
+        }
+
+        .sphere {
+            position: absolute;
+            border-radius: 50%;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: justify;
+            padding: 20px;
+            color: black;
+            line-height: 4.5;
+            text-indent: 34px;
+            top: 350px;
+            font-size:large;
+        }
+
+        .sphere-1 {
+            background-color: white;
+            width: 80px;
+            height: 80px;
+            left: 450px;
+        }
+
+        .sphere-2 {
+            background-color: red;
+            width: 80px;
+            height: 80px;
+            left: 575px;
+        }
+
+        .sphere-3 {
+            background-color: yellow;
+            width: 80px;
+            height: 80px;
+            left: 700px;
+        }
+
+        .sphere-4 {
+            background-color: brown;
+            width: 80px;
+            height: 80px;
+            left: 825px;
+        }
+
+        .sphere-5 {
+            background-color: green;
+            width: 80px;
+            height: 80px;
+            left: 950px;
+        }
+
+        .sphere-6 {
+            background-color: orange;
+            width: 80px;
+            height: 80px;
+            left: 1075px;
+        }
+
+        .sphere-7 {
+            background-color: blue;
+            width: 80px;
+            height: 80px;
+            left: 1200px;
+        }
+
+        .sphere-8 {
+            background: linear-gradient(red 0%, orange 14.2%, yellow 28.2%, green 42.6%, #81d4fa 71.4%, darkblue 85.6%, purple 100%);
+            width: 80px;
+            height: 80px;
+            left: 1325px;
+        }
+
+        .sphere-9 {
+            background: linear-gradient(black 25%, red 50%, yellow 90%);
+            width: 80px;
+            height: 80px;
+            border: 2px double white;
+            left: 1450px;
+        }
+
+        .sphere-10 {
+            background: linear-gradient(white 25%, blue 50%, red 90%);
+            width: 80px;
+            height: 80px;
+            left: 1575px;
+        }
     </style>
 </head>
 <body>
@@ -90,10 +267,13 @@
             <label>Второе число: <input type="number" value="7891" id="numberB"><br></label>
 
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
-            <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
-            <div class="message" onclick="showDiff()">Найти разность чисел</div>
+            <div style="position: relative; top: 18px" class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+            <div style="position: relative; top: 18px" class="message" onclick="showDiff()">Найти разность чисел</div>
             <div class="message" onclick="showMult()">Найти произведение</div>
             <div class="message" onclick="showDiv()">Найти деление</div>
+            <br>
+            <br>
+            <br>
 
             <div>
                 <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'yellow', 'black', 'double')">
@@ -103,9 +283,49 @@
             </div>
 
             <div id="output"></div>
+
+            <div class="trash">
+                <h1>Корзина товаров</h1>
+
+                <label class="fruit" style="right: 65px">Яблоки (100р/шт): <br><input type="number" value="3" id="totalA"><br></label>
+                <br>
+                <label class="fruit" style="right: 65px">Груши (80р/шт): <br><input type="number" value="8" id="totalB"><br></label>
+                <br>
+                <label class="fruit" style="right: 65px">Апельсины (150р/шт): <br><input type="number" value="4" id="totalC"><br></label>
+                <br>
+                <label class="fruit" style="right: 65px">Дыни (300р/шт): <br><input type="number" value="1" id="totalD"><br></label>
+                <br>
+                <div class="price" onclick="showTotal()">Рассчитать<br></div>
+                <br>
+                <br>
+                <div style="color: red; position: relative; right: 97px;" id="Div"></div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div id="block-1" onclick="hideBlock1()" class="sphere sphere-1">1</div>
+
+            <div id="block-2" onclick="hideBlock2()" class="sphere sphere-2">2</div>
+
+            <div id="block-3" onclick="hideBlock3()" class="sphere sphere-3">3</div>
+
+            <div id="block-4" onclick="hideBlock4()" class="sphere sphere-4">4</div>
+
+            <div id="block-5" onclick="hideBlock5()" class="sphere sphere-5">5</div>
+
+            <div id="block-6" onclick="hideBlock6()" class="sphere sphere-6">6</div>
+
+            <div id="block-7" onclick="hideBlock7()" class="sphere sphere-7">7</div>
+
+            <div id="block-8" onclick="hideBlock8()" class="sphere sphere-8">8</div>
+
+            <div id="block-9" onclick="hideBlock9()" class="sphere sphere-9">9</div>
+
+            <div id="block-10" onclick="hideBlock10()" class="sphere sphere-10">10</div>
+
         </main>
 
-        <footer onclick="showAuthor()">
+        <footer>
             &copy; Темергалеев Н. А., ФБИ-11, 2 курс, 2023
         </footer>
 </body>
