@@ -12,51 +12,51 @@
             block.style.display = 'none';
         }
 
-
         function hideBlock2() {
-            let block = document.getElementById('block-2');
+            block = document.getElementById('block-2');
             block.style.display = 'none';
         }
 
         function hideBlock3() {
-            let block = document.getElementById('block-3');
+            block = document.getElementById('block-3');
             block.style.display = 'none';
         }
 
         function hideBlock4() {
-            let block = document.getElementById('block-4');
+            block = document.getElementById('block-4');
             block.style.display = 'none';
         }
 
         function hideBlock5() {
-            let block = document.getElementById('block-5');
+            block = document.getElementById('block-5');
             block.style.display = 'none';
         }
 
         function hideBlock6() {
-            let block = document.getElementById('block-6');
+            block = document.getElementById('block-6');
             block.style.display = 'none';
         }
 
         function hideBlock7() {
-            let block = document.getElementById('block-7');
+            block = document.getElementById('block-7');
             block.style.display = 'none';
         }
 
         function hideBlock8() {
-            let block = document.getElementById('block-8');
+            block = document.getElementById('block-8');
             block.style.display = 'none';
         }
 
         function hideBlock9() {
-            let block = document.getElementById('block-9');
+            block = document.getElementById('block-9');
             block.style.display = 'none';
         }
 
         function hideBlock10() {
-            let block = document.getElementById('block-10');
+            block = document.getElementById('block-10');
             block.style.display = 'none';
         }
+
         function showSum() {
             let inputA = document.getElementById('numberA');
             let inputB = document.getElementById('numberB');
@@ -122,9 +122,11 @@
             let total = apple * valueApple + pear * valuePear + orange * valueOrange + melon * valueMelon;
             document.getElementById("Div").innerHTML = "Общая цена: " + total;
         }
+
         function wholePrice() {
             print(total)
         }
+
     </script>
     <style>
         .message {
@@ -183,78 +185,61 @@
             text-indent: 34px;
             top: 350px;
             font-size:large;
+            width: 80px;
+            height: 80px;
         }
 
         .sphere-1 {
             background-color: white;
-            width: 80px;
-            height: 80px;
             left: 450px;
         }
 
         .sphere-2 {
             background-color: red;
-            width: 80px;
-            height: 80px;
             left: 575px;
         }
 
         .sphere-3 {
             background-color: yellow;
-            width: 80px;
-            height: 80px;
             left: 700px;
         }
 
         .sphere-4 {
             background-color: brown;
-            width: 80px;
-            height: 80px;
             left: 825px;
         }
 
         .sphere-5 {
             background-color: green;
-            width: 80px;
-            height: 80px;
             left: 950px;
         }
 
         .sphere-6 {
             background-color: orange;
-            width: 80px;
-            height: 80px;
             left: 1075px;
         }
 
         .sphere-7 {
             background-color: blue;
-            width: 80px;
-            height: 80px;
             left: 1200px;
         }
 
         .sphere-8 {
             background: linear-gradient(red 0%, orange 14.2%, yellow 28.2%, green 42.6%, #81d4fa 71.4%, darkblue 85.6%, purple 100%);
-            width: 80px;
-            height: 80px;
             left: 1325px;
         }
 
         .sphere-9 {
             background: linear-gradient(black 25%, red 50%, yellow 90%);
-            width: 80px;
-            height: 80px;
             border: 2px double white;
             left: 1450px;
         }
 
         .sphere-10 {
             background: linear-gradient(white 25%, blue 50%, red 90%);
-            width: 80px;
-            height: 80px;
             left: 1575px;
         }
+
     </style>
 </head>
 <body>
@@ -325,7 +310,7 @@
 
         </main>
 
-        <footer>
+        <footer onclick="showAuthor()">
             &copy; Темергалеев Н. А., ФБИ-11, 2 курс, 2023
         </footer>
 </body>

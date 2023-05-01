@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Рисование блоков</title>
+	<style>
+		.block {
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+			margin: 10px;
+			cursor: pointer;
+            border-radius: 50%;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="blocks"></div>
+	<script>
+		function drawColoredBlocks(n) {
+			let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black', 'darkblue', 'brown', 'gray'];
+			let blocksDiv = document.getElementById("blocks");
+			for (let i = 0; i < n; i++) {
+				let block = document.createElement("div");
+				block.className = "block";
+				block.style.backgroundColor = colors[i % colors.length];
+				block.onclick = function() {
+					this.remove();
+				};
+				blocksDiv.appendChild(block);
+			}
+		}
+		drawColoredBlocks(15);
+	</script>
+</body>
+</html>
