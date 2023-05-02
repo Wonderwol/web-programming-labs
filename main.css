@@ -74,3 +74,13 @@ a:active {
     color: black;
     background-color: white;
 }
+
+.game {
+    border: 10px red solid;
+    border-radius: 50px;
+    height: 175px;
+    width: 350px;
+    margin: 30px auto;
+    padding: 8px;
+    text-align: center;
+}
