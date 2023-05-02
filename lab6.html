@@ -20,6 +20,27 @@
             background-color:white;
             padding-left: 9px;
         }
+
+        .game {
+            border: 10px red solid;
+            border-radius: 50px;
+            height: 216px;
+            width: 350px;
+            margin: 30px auto;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .color {
+            border: 3px gray solid;
+            width: 203px;
+            height: 71px;
+            color: white;
+            text-align: center;
+            margin: 35px;
+            padding: 8px;
+            padding-bottom: 0px;
+        }
     </style>
 
     <script>
@@ -77,6 +98,34 @@
             divHelp[1].style.display='none';
             divHelp[0].style.display='block';
         }
+
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'orange';
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'черный';
+            }
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'white';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'белый';
+            }
+            else if (div.style.backgroundColor == 'white') {
+                div.style.backgroundColor = 'blue';
+                div.style.color = 'yellow';
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                div.style.color = 'green';
+                document.getElementById('color-name').innerHTML = 'желтый';
+            }
+        }
     </script>
 
 <body>
@@ -94,8 +143,8 @@
         <div class="game" style="display:none">
             <h1>Угадай число!</h1>
             <div>
-                Задумано число от 1 до 100. Угадайте, какое?<br>
-                <input type="number" value="" min="1" max="100" id="user-number"><br>
+                Задумано число от 1 до 100. Угадайте, какое?<br><br>
+                <input type="number" value="0" min="1" max="100" id="user-number"><br><br>
                 <button onclick="guess()">Угадать</button>
                 <div id="result"></div>
             </div>
@@ -132,6 +181,11 @@
                 <li>Если вам выдало: "Поздравляем, вы выиграли!", радуйтесь.</li>
                 <li>Если вы не удовлетворены, нажмите "Сыграть еще раз"</li>
             </ol>
+        </div>
+
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">прозрачный</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
         </div>
     </main>
 
