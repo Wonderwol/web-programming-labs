@@ -7,7 +7,6 @@
     <title>Темергалеев Никита Алексеевич. Лабораторная работа 6</title>
     <link rel="stylesheet" href="main.css">
 </head>
-
     <style>
         .help {
             border: 3px white solid;
@@ -41,6 +40,24 @@
             padding: 8px;
             padding-bottom: 0px;
         }
+
+        .movingBlock {
+            display: flex;
+            width: 150px;
+            height: 150px;
+            border: 5px white solid;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: pink;
+            color: black;
+            transition: 3s;
+        }
+
+        .movingBlock:hover {
+            cursor: pointer;
+        }
+
     </style>
 
     <script>
@@ -77,12 +94,19 @@
             else if (1 > userNumber) {
                 message.innerHTML = 'Дурачек, число должно быть в диапазоне от 1 до 100!';
             }
+            else if (count > 5) {
+            screens = document.getElementsByClassName('game');
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'none';
+            screens[3].style.display = 'block';
+            }
         }
 
         function again(params) {
-            let screens = document.getElementsByClassName('game');
+             screens = document.getElementsByClassName('game');
                 screens[2].style.display = 'none';
                 screens[1].style.display = 'block';
+                screens[3].style.display = 'none';
                 count = 0;
                 number = Math.floor(Math.random() * 100) + 1;
         }
@@ -126,6 +150,19 @@
                 document.getElementById('color-name').innerHTML = 'желтый';
             }
         }
+
+        let positionLeft = true;
+        function move() {
+            let position = document.getElementById('block');
+            if (positionLeft == true) {
+                position.style.transform = 'translateX(1000px) rotate(0)';
+                positionLeft = false;
+            }
+            else {
+                position.style.transform = 'translateX(0px) rotate(4turn)';
+                positionLeft = true;
+            }
+        }
     </script>
 
 <body>
@@ -151,7 +188,7 @@
         </div>
 
         <div class="game" style="display:none">
-            <h1>Поздравляем, вы выиграли!</h1>
+            <h1>Поздравляем, вы крут!</h1>
             <div>
                 Задуманное число: <span id="number"></span>
             </div>
@@ -163,30 +200,44 @@
             </div>
         </div>
 
+        <div class="game" style="display:none">
+            <h1>Поражение, вы лох!</h1>
+            <button onclick="again()">попытаться снова</button>
+        </div>
         <br>
         <br>
         <div class="help">
             <button onclick="showHelp()">Показать правила игры</button>
         </div>
 
-        <div class="help" style="display: none; height: 228px; color:black">
+        <div class="help" style="display: none; height: 265px; color:black">
             <button onclick="closeHelp()">Cкрыть правила игры</button>
             <br>
             <ol type="A">
                 <li>Улыбнитесь</li>
                 <li>Нажмите на кнопку "сыграть в игру"</li>
                 <li>Введите число от 1 до 100 и нажмите "Угадать"</li>
+                <li>Если вы сделаете более 5 ошибок, то вы проиграете</li>
                 <li>Если выдало: "Вы ввели слишком большое число", введите меньшее число</li>
                 <li>Если выдало: "Вы ввели слишком маленькое число", введите большее число</li>
-                <li>Если вам выдало: "Поздравляем, вы выиграли!", радуйтесь.</li>
+                <li>Если вам выдало: "Поздравляем, вы крут!", радуйтесь</li>
+                <li>Если вам выдало: "Поражение, вы лох!", нажмите "попытаться снова" и не отчаивайтесь!</li>
                 <li>Если вы не удовлетворены, нажмите "Сыграть еще раз"</li>
             </ol>
         </div>
 
-        <div class="color" ondblclick="changeColor(this)">
+        <div class="color" ondblclick="changeColor(this)" style="cursor: pointer">
             Цвет: <span id="color-name">прозрачный</span><br>
             Сделайте двойной щелчок, чтобы сменить.
         </div>
+        <br>
+        <br>
+
+        <div class="movingBlock" id="block" onclick="move()">
+            Щёлкни меня
+        </div>
+        <br>
+        <br>
     </main>
 
     <footer>
