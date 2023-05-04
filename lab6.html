@@ -52,6 +52,7 @@
             background-color: pink;
             color: black;
             transition: 3s;
+            user-select: none;
         }
 
         .movingBlock:hover {
@@ -71,10 +72,19 @@
             color: black;
             transition: 1s;
             font-size: 14px;
+            margin-left: 30px;
+            user-select: none;
         }
 
         .plusSize:hover {
             cursor:pointer
+        }
+
+        img {
+            position: relative;
+            left: 600px;
+            top: -100px;
+            height:auto
         }
 
     </style>
@@ -108,10 +118,10 @@
                 document.getElementById('try-count').innerHTML = count;
             }
             if (100 < userNumber) {
-                message.innerHTML = 'Дурачек, число должно быть в диапазоне от 1 до 100!';
+                message.innerHTML = 'Дурачок, число должно быть в диапазоне от 1 до 100!';
             }
             else if (1 > userNumber) {
-                message.innerHTML = 'Дурачек, число должно быть в диапазоне от 1 до 100!';
+                message.innerHTML = 'Дурачок, число должно быть в диапазоне от 1 до 100!';
             }
             else if (count > 5) {
             screens = document.getElementsByClassName('game');
@@ -189,21 +199,54 @@
             let newWidth = fatBlock.offsetWidth + 100;
             fatBlock.textContent = 'Я стал жирнее!!!';
             if (size < 901) {
-            fatBlock.style.width  = newWidth + 'px';
-            size += 100;
+                fatBlock.style.width  = newWidth + 'px';
+                size += 100;
             }
             else if (size == 1000) {
-                fatBlock.style.width = '1895px';
+                fatBlock.style.width = '1500px';
                 fatBlock.textContent = 'Я СТАЛ ЖИРНЫМ!!!';
                 fatBlock.style.fontSize = '50px';
                 size += 100;
-
             }
             else {
                 fatBlock.style.width = '100px';
                 fatBlock.style.fontSize = '14px';
                 fatBlock.textContent = 'Я не жирный. Тыкни на меня, чтобы я стал жирнее!!!';
                 size = 100;
+            }
+        }
+
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if (color == 'Красный' && type == 'Футболка') {
+                wear.src = 'red-f.jpg';
+            }
+            else if (color == 'Красный' && type == 'Поло') {
+                wear.src = 'red-p.jpg';
+            }
+            else if (color == 'Красный' && type == 'Майка') {
+                wear.src = 'red-m.jpg';
+            }
+            else if (color == 'Белый' && type == 'Футболка') {
+                wear.src = 'white-f.jpg';
+            }
+            else if (color == 'Белый' && type == 'Поло') {
+                wear.src = 'white-p.jpg';
+            }
+            else if (color == 'Белый' && type == 'Майка') {
+                wear.src = 'white-m.jpg';
+            }
+            else if (color == 'Чёрный' && type == 'Футболка') {
+                wear.src = 'black-f.jpg';
+            }
+            else if (color == 'Чёрный' && type == 'Поло') {
+                wear.src = 'black-p.jpg';
+            }
+            else if (color == 'Чёрный' && type == 'Майка') {
+                wear.src = 'black-m.jpg';
             }
         }
     </script>
@@ -214,7 +257,7 @@
     </header>
 
     <main>
-        <div class="game" style="height: 20px; padding-top: 6px; width: 120px">
+        <div class="game" style="height: 20px; padding-top: 6px; width: 120px;">
             <button onclick="startGame()">
                 Сыграть в игру
             </button>
@@ -253,7 +296,7 @@
             <button onclick="showHelp()">Показать правила игры</button>
         </div>
 
-        <div class="help" style="display: none; height: 265px; color:black">
+        <div class="help" style="display: none; height: 265px; color:black;">
             <button onclick="closeHelp()">Cкрыть правила игры</button>
             <br>
             <ol type="A">
@@ -269,7 +312,7 @@
             </ol>
         </div>
 
-        <div class="color" ondblclick="changeColor(this)" style="cursor: pointer">
+        <div class="color" ondblclick="changeColor(this)" style="cursor: pointer; user-select: none;">
             Цвет: <span id="color-name">прозрачный</span><br>
             Сделайте двойной щелчок, чтобы сменить.
         </div>
@@ -284,9 +327,31 @@
             Я не жирный.
             Тыкни на меня, чтобы я стал жирнее!!!
         </div>
+        <br>
+        <br>
 
+        <div style="margin: 0px 0px 0px 50px">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Чёрный</option>
+            </select>
+            <br>
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select>
+            <br>
+            <br>
+            <button onclick="filter()" style="margin-left: 50px">OK</button>
+            <br>
+            <br>
+            <img id="wear">
+        </div>
     </main>
-
     <footer>
         &copy; Темергалеев Никита, ФБИ-11, 2 курс, 2023
     </footer>
