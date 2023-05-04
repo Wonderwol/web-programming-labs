@@ -58,6 +58,25 @@
             cursor: pointer;
         }
 
+        .plusSize {
+            display: flex;
+            width: 100px;
+            height: 100px;
+            border: 5px white solid;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background-color: lightblue;
+            color: black;
+            transition: 1s;
+            font-size: 14px;
+        }
+
+        .plusSize:hover {
+            cursor:pointer
+        }
+
     </style>
 
     <script>
@@ -149,6 +168,7 @@
                 div.style.color = 'green';
                 document.getElementById('color-name').innerHTML = 'желтый';
             }
+
         }
 
         let positionLeft = true;
@@ -161,6 +181,29 @@
             else {
                 position.style.transform = 'translateX(0px) rotate(4turn)';
                 positionLeft = true;
+            }
+        }
+        let size = 100
+        function fat() {
+            let fatBlock = document.getElementById('fatBlock');
+            let newWidth = fatBlock.offsetWidth + 100;
+            fatBlock.textContent = 'Я стал жирнее!!!';
+            if (size < 901) {
+            fatBlock.style.width  = newWidth + 'px';
+            size += 100;
+            }
+            else if (size == 1000) {
+                fatBlock.style.width = '1895px';
+                fatBlock.textContent = 'Я СТАЛ ЖИРНЫМ!!!';
+                fatBlock.style.fontSize = '50px';
+                size += 100;
+
+            }
+            else {
+                fatBlock.style.width = '100px';
+                fatBlock.style.fontSize = '14px';
+                fatBlock.textContent = 'Я не жирный. Тыкни на меня, чтобы я стал жирнее!!!';
+                size = 100;
             }
         }
     </script>
@@ -237,7 +280,11 @@
             Щёлкни меня
         </div>
         <br>
-        <br>
+        <br> <div class="plusSize" id="fatBlock" onclick="fat()">
+            Я не жирный.
+            Тыкни на меня, чтобы я стал жирнее!!!
+        </div>
+
     </main>
 
     <footer>
