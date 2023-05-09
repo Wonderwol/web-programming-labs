@@ -123,7 +123,7 @@
             else if (1 > userNumber) {
                 message.innerHTML = 'Дурачок, число должно быть в диапазоне от 1 до 100!';
             }
-            else if (count > 5) {
+            else if (count == 10) {
             screens = document.getElementsByClassName('game');
             screens[2].style.display = 'none';
             screens[1].style.display = 'none';
@@ -186,6 +186,7 @@
             let position = document.getElementById('block');
             if (positionLeft == true) {
                 position.style.transform = 'translateX(1000px) rotate(0)';
+                position.textContent = 'АОАОАОАОАО';
                 positionLeft = false;
             }
             else {
@@ -227,25 +228,25 @@
             else if (color == 'Красный' && type == 'Поло') {
                 wear.src = 'red-p.jpg';
             }
-            else if (color == 'Красный' && type == 'Майка') {
+            if (color == 'Красный' && type == 'Майка') {
                 wear.src = 'red-m.jpg';
             }
-            else if (color == 'Белый' && type == 'Футболка') {
+            if (color == 'Белый' && type == 'Футболка') {
                 wear.src = 'white-f.jpg';
             }
-            else if (color == 'Белый' && type == 'Поло') {
+            if (color == 'Белый' && type == 'Поло') {
                 wear.src = 'white-p.jpg';
             }
-            else if (color == 'Белый' && type == 'Майка') {
+            if (color == 'Белый' && type == 'Майка') {
                 wear.src = 'white-m.jpg';
             }
-            else if (color == 'Чёрный' && type == 'Футболка') {
+            if (color == 'Чёрный' && type == 'Футболка') {
                 wear.src = 'black-f.jpg';
             }
-            else if (color == 'Чёрный' && type == 'Поло') {
+            if (color == 'Чёрный' && type == 'Поло') {
                 wear.src = 'black-p.jpg';
             }
-            else if (color == 'Чёрный' && type == 'Майка') {
+            if (color == 'Чёрный' && type == 'Майка') {
                 wear.src = 'black-m.jpg';
             }
         }
@@ -303,7 +304,7 @@
                 <li>Улыбнитесь</li>
                 <li>Нажмите на кнопку "сыграть в игру"</li>
                 <li>Введите число от 1 до 100 и нажмите "Угадать"</li>
-                <li>Если вы сделаете более 5 ошибок, то вы проиграете</li>
+                <li>Если вы сделаете 10 ошибок, то вы проиграете</li>
                 <li>Если выдало: "Вы ввели слишком большое число", введите меньшее число</li>
                 <li>Если выдало: "Вы ввели слишком маленькое число", введите большее число</li>
                 <li>Если вам выдало: "Поздравляем, вы крут!", радуйтесь</li>
@@ -349,7 +350,7 @@
             <button onclick="filter()" style="margin-left: 50px">OK</button>
             <br>
             <br>
-            <img id="wear">
+            <img id="wear" width="300px">
         </div>
     </main>
     <footer>

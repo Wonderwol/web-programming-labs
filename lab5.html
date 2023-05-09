@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Темергалеев Н. А. Лабораторная 5</title>
     <link rel="stylesheet" href="main.css">
+</head>
     <script>
         function hideBlock1() {
             let block = document.getElementById('block-1');
@@ -120,7 +121,7 @@
             let valueOrange = parseInt(totalC.value);
             let valueMelon = parseInt(totalD.value);
             let total = apple * valueApple + pear * valuePear + orange * valueOrange + melon * valueMelon;
-            document.getElementById("Div").innerHTML = "Общая цена: " + total;
+            document.getElementById("div").innerHTML = "Общая цена: " + total;
         }
 
         function wholePrice() {
@@ -241,8 +242,8 @@
         }
 
     </style>
-</head>
-<body>
+
+    <body>
         <header onclick="showAuthor()">
             НГТУ, ФБ, Лабораторная работа 5
         </header>
@@ -283,7 +284,7 @@
                 <div class="price" onclick="showTotal()">Рассчитать<br></div>
                 <br>
                 <br>
-                <div style="color: red; position: relative; right: 97px;" id="Div"></div>
+                <div style="color: red; position: relative; right: 97px;" id="div"></div>
             </div>
             <br>
             <br>
