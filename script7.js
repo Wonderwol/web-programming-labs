@@ -42,6 +42,7 @@ function showExchange() {
 }
 
 let flag3 = true;
+
 function addTransparentBlocks() {
     if (flag3 == true) {
         let tBlocks = document.getElementById('transparent-blocks');
@@ -56,4 +57,32 @@ function addTransparentBlocks() {
         }
     }
     flag3 = false;
+}
+
+function addSpheres() {
+    let spheres = document.getElementById('spheres');
+    let input = document.getElementById('user-spheres');
+    let userSpheres = parseInt(input.value);
+    for (let i = userSpheres; i >= 1; i--) {
+        let sphere = document.createElement('div');
+        sphere.innerHTML = i;
+        sphere.style.borderRadius = '50%';
+        sphere.style.width = '100px';
+        sphere.style.height = '100px';
+        sphere.style.textAlign = 'center';
+        sphere.style.lineHeight = '95px';
+        sphere.style.color = 'black';
+        sphere.style.display = 'inline-block'
+        sphere.style.margin = '2px';
+        if (i % 3  == 0) {
+            sphere.style.backgroundColor = 'green';
+        }
+        if (i % 3 == 1) {
+            sphere.style.backgroundColor = 'red';
+        }
+        if (i % 3  == 2) {
+            sphere.style.backgroundColor = 'yellow';
+        }
+        spheres.appendChild(sphere);
+    }
 }
