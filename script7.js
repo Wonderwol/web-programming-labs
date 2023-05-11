@@ -86,3 +86,14 @@ function addSpheres() {
         spheres.appendChild(sphere);
     }
 }
+
+function multiTable() {
+    let table = document.getElementById('table');
+    for (let i = 13; i <= 33; i++) {
+        let string = document.createElement('div');
+        string.style.width = '120px';
+        string.style.height = '20px';
+        string.innerHTML = i + ' * 94 = ' + 94 * i;
+        table.appendChild(string);
+    }
+}
