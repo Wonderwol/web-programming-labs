@@ -46,15 +46,16 @@ let flag3 = true;
 function addTransparentBlocks() {
     if (flag3 == true) {
         let tBlocks = document.getElementById('transparent-blocks');
-        for (let i = 0; i < 10; i++) {
+        for (let i = 1; i < 11; i++) {
             let tBlock = document.createElement('div');
             tBlock.style.borderColor = 'white';
             tBlock.style.width = '20px';
             tBlock.style.borderStyle = 'solid';
             tBlock.style.margin = '10px';
-            tBlock.style.opacity = i / 10;
+            tBlock.style.opacity = i / 10 - 0.1;
+            tBlock.innerHTML = i;
             tBlocks.appendChild(tBlock);
-        }
+        }   
     }
     flag3 = false;
 }
@@ -96,4 +97,78 @@ function multiTable() {
         string.innerHTML = i + ' * 94 = ' + 94 * i;
         table.appendChild(string);
     }
+}
+
+function stockTable() {
+    let bigTable = document.getElementById('bigTable');
+    bigTable.style.color = 'white';
+
+    //Делаем заголовки
+    let header1 = document.createElement("th");
+    header1.innerHTML = "Дата";
+    header1.style.color = 'white';
+    bigTable.appendChild(header1);
+
+    let header2 = document.createElement("th");
+    header2.innerHTML = "Цена акций";
+    header2.style.color = 'green';
+    bigTable.appendChild(header2);
+
+    let header3 = document.createElement('th');
+    header3.innerHTML = 'Разница';
+    header3.style.color = 'red';
+    bigTable.appendChild(header3); 
+
+    //создаем таблицу и выводим в нее значения в массивах
+    let stockPrice = [168.20, 164.40, 163.20, 152.00, 148.80,
+                      154.10, 153.40, 158.20, 162.60, 164.40];
+    let date = ['26.04.2023', '27.04.2023', '28.04.2023', '02.05.2023', '03.05.2023',
+                '04.05.2023', '05.05.2023', '08.05.2023', '10.05.2023', '11.05.2023'];
+    let diffrence = ['-', stockPrice[1] - stockPrice[0], stockPrice[2] - stockPrice[1], stockPrice[3] - stockPrice[2], stockPrice[4] - stockPrice[3],
+                     stockPrice[5] - stockPrice[4], stockPrice[6] - stockPrice[5], stockPrice[7] - stockPrice[6], stockPrice[8] - stockPrice[7], stockPrice[9] - stockPrice[8]]
+    for (let i = 0; i < stockPrice.length; i++) {
+        let row = document.createElement('tr');
+        let cell1 = document.createElement('td');
+        cell1.innerHTML = date[i];
+        cell1.style.textAlign = 'center';
+        row.appendChild(cell1);
+        let cell2 = document.createElement('td');
+        cell2.innerHTML = stockPrice[i];
+        cell2.style.textAlign = 'center';
+        row.appendChild(cell2);
+        let cell3 = document.createElement('td');
+        if (i == 0) {
+        cell3.innerHTML = diffrence[0];
+        }
+        else {
+            diffrence[i] = diffrence[i].toFixed(2);
+            cell3.innerHTML = diffrence[i];
+        }
+        cell3.style.textAlign = 'center';
+        row.appendChild(cell3);
+        bigTable.appendChild(row);
+    }
+
+        //выводим среднее значение
+        let priceSum = 0;
+        for (let i = 0; i < stockPrice.length; i++) {
+            priceSum = priceSum + stockPrice[i];
+
+        let stockAverage = priceSum / stockPrice.length;
+        alert1 = document.getElementById('average');
+        alert1.style.color = 'white';
+        alert1.innerHTML = 'Среднее значение: ' + stockAverage;
+    }
+
+        //выводим минимальное значение
+        let minValue = Math.min.apply(0,stockPrice);
+        alert2 = document.getElementById('minValue');
+        alert2.style.color = 'blue';
+        alert2.innerHTML = 'Минимальное значение: ' + minValue;
+
+        //выводим максимальное значение
+        let maxValue = Math.max.apply(0, stockPrice);
+        alert3 = document.getElementById('maxValue');
+        alert3.style.color = 'red';
+        alert3.innerHTML = 'Максимальное значение:' + maxValue;
 }
