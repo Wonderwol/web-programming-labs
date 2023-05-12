@@ -9,6 +9,7 @@ function addBlocks() {
             block.style.width = '120px';
             block.style.borderStyle = 'solid';
             block.style.margin = '10px';
+            block.style.display = 'inline-block';
             blocks.appendChild(block);
         }
     }
@@ -48,12 +49,14 @@ function addTransparentBlocks() {
         let tBlocks = document.getElementById('transparent-blocks');
         for (let i = 1; i < 11; i++) {
             let tBlock = document.createElement('div');
+            tBlock.style.display = 'inline-block';
             tBlock.style.borderColor = 'white';
             tBlock.style.width = '20px';
             tBlock.style.borderStyle = 'solid';
             tBlock.style.margin = '10px';
             tBlock.style.opacity = i / 10 - 0.1;
             tBlock.innerHTML = i;
+            tBlock.style.textAlign = 'center';
             tBlocks.appendChild(tBlock);
         }   
     }
