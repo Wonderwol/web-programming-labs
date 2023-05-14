@@ -43,7 +43,6 @@ function showExchange() {
 }
 
 let flag3 = true;
-
 function addTransparentBlocks() {
     if (flag3 == true) {
         let tBlocks = document.getElementById('transparent-blocks');
@@ -91,7 +90,9 @@ function addSpheres() {
     }
 }
 
+let flag4 = true;
 function multiTable() {
+    if (flag4 == true) {
     let table = document.getElementById('table');
     for (let i = 13; i <= 33; i++) {
         let string = document.createElement('div');
@@ -99,7 +100,9 @@ function multiTable() {
         string.style.height = '20px';
         string.innerHTML = i + ' * 94 = ' + 94 * i;
         table.appendChild(string);
+        }
     }
+    flag4 = false;
 }
 
 function stockTable() {
@@ -131,14 +134,17 @@ function stockTable() {
                      stockPrice[5] - stockPrice[4], stockPrice[6] - stockPrice[5], stockPrice[7] - stockPrice[6], stockPrice[8] - stockPrice[7], stockPrice[9] - stockPrice[8]]
     for (let i = 0; i < stockPrice.length; i++) {
         let row = document.createElement('tr');
+
         let cell1 = document.createElement('td');
         cell1.innerHTML = date[i];
         cell1.style.textAlign = 'center';
         row.appendChild(cell1);
+
         let cell2 = document.createElement('td');
         cell2.innerHTML = stockPrice[i];
         cell2.style.textAlign = 'center';
         row.appendChild(cell2);
+
         let cell3 = document.createElement('td');
         if (i == 0) {
         cell3.innerHTML = diffrence[0];
@@ -156,15 +162,15 @@ function stockTable() {
         let priceSum = 0;
         for (let i = 0; i < stockPrice.length; i++) {
             priceSum = priceSum + stockPrice[i];
+        }
 
         let stockAverage = priceSum / stockPrice.length;
         alert1 = document.getElementById('average');
         alert1.style.color = 'white';
         alert1.innerHTML = 'Среднее значение: ' + stockAverage;
-    }
 
         //выводим минимальное значение
-        let minValue = Math.min.apply(0,stockPrice);
+        let minValue = Math.min.apply(0, stockPrice);
         alert2 = document.getElementById('minValue');
         alert2.style.color = 'blue';
         alert2.innerHTML = 'Минимальное значение: ' + minValue;
