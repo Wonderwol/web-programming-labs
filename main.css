@@ -71,3 +71,15 @@ a:active {
     color: black;
     background-color: white;
 }
+
+#current-date {
+    border: 2px white double;
+    font-size: 2vw;
+    color: white;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
